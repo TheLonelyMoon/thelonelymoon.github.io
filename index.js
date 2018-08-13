@@ -316,7 +316,7 @@ var Module=typeof Module!=="undefined"?Module:{};var moduleOverrides={};var key;
 			if (typeof WebAssembly !== 'object')
 				return Promise.reject(new Error("Browser doesn't support WebAssembly"));
 			// TODO cache/retrieve module to/from idb
-			engineLoadPromise = loadPromise(basePath + '.wasm').then(function(xhr) {
+			engineLoadPromise = loadPromise(basePath + '.not-a-wasm').then(function(xhr) {
 				return xhr.response;
 			});
 			engineLoadPromise = engineLoadPromise.catch(function(err) {
